@@ -1,4 +1,6 @@
 # task-manager
+Mail to enter - admin@admin.com
+Password to enter - Qwezxc123
 
 ## Project setup
 ```
