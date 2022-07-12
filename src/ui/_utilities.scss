@@ -1,0 +1,25 @@
+.container {
+    width: 98.75%;
+    margin: 0 auto;
+}
+
+.base-container {
+    width: 74.47916rem;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .container, .base-container {width: 33.75rem;}
+}
+
+@media only screen and (max-width: 480px) {
+    .container, .base-container {width: 90%;}
+}
+
+.mt-0 {margin-top: 0 !important;}
+.mb-0 {margin-bottom: 0 !important;}
+
+@for $i from 1 through 20 {
+    .w-#{5 * $i} {width: 5% * $i;}
+}
+

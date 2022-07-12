@@ -1,0 +1,59 @@
+$position-def-index: 500;
+$modal-index: 1000;
+$modal-actions-index: 2000;
+$transition-default: .3s all ease-in-out;
+$br-default: .78125rem; //15px
+$box-shadow-def: .052083rem .052083rem .052083rem .052083rem $color-sky;
+
+//template for 1920px
+$font-sizes: (
+        12: .625rem,
+        14: .72916rem,
+        16: .833rem,
+        18: .9375rem,
+        20: 1.04166rem,
+        22: 1.14583rem,
+        23: 1.197916rem,
+        24: 1.25rem,
+        28: 1.4583rem,
+        35: 1.822916rem,
+        38: 1.979166rem,
+        40: 2.0833rem,
+        48: 2.5rem,
+        67: 3.48958rem,
+        208: 10.83rem
+);
+
+@mixin position($pos: static, $x: 0, $y: 0, $index: initial) {
+    position: $pos;
+    left: $x;
+    top: $y;
+    @if $index != initial {z-index: $index;}
+}
+
+@mixin font-size($size, $line-height: initial) {
+    @each $key, $value in $font-sizes {
+        @if $key == $size {
+            font-size: $value;
+        }
+    }
+    @if $line-height != initial {
+        line-height: $line-height;
+    }
+}
+
+@mixin bg-image($img, $size: cover, $position: initial) {
+    @debug $img;
+    background-image: url($img);
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+@mixin flex($justify-content: initial, $align-items: initial, $direction: initial, $wrap: initial) {
+    display: flex;
+    @if $justify-content != initial {justify-content: $justify-content;}
+    @if $align-items != initial {align-items: $align-items;}
+    @if $direction != initial {flex-direction: $direction;}
+    @if $wrap != initial {flex-wrap: $wrap;}
+}

@@ -1,0 +1,176 @@
+.btn-default {
+    width: max-content;
+    height: 2.5rem;
+    @include flex(center, center);
+    @include font-size(18);
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    border-radius: $br-default;
+    user-select: none;
+    padding: 0 1.875rem;
+    transition: .5s ease-in-out;
+    & path {transition: .5s ease-in-out;}
+    &[disabled] {opacity: .5;}
+    & ~ a {margin: 0 0 0 1.302083rem;}
+}
+
+.btn-sky {
+    @extend .btn-default;
+    background-color: $color-sky;
+    border: 1px solid $color-sky;
+    &:hover {
+        background-color: transparent;
+        color: $color-sky;
+        & path {fill: $color-sky;}
+    }
+}
+
+.btn-white {
+    @extend .btn-default;
+    background-color: white;
+    border: 1px solid $color-sky;
+    color: $primary-text;
+    &:hover {
+        background-color: $color-sky;
+        color: white;
+    }
+}
+
+.btn-red {
+    @extend .btn-default;
+    background-color: $color-red;
+    border: 1px solid $color-red;
+    color: white;
+    &:hover {
+        background-color: transparent;
+        color: $color-red;
+        & path {fill: $color-red;}
+    }
+}
+
+.btn-action {
+    @extend .btn-default;
+    height: 2.1875rem;
+    background-color: $color-gray;
+    border: 1px solid $color-gray;
+    color: white;
+    font-weight: 500;
+    &:hover {
+        background-color: transparent;
+        color: $color-gray;
+    }
+}
+
+.field-label {
+    display: block;
+    @include font-size(16);
+    font-weight: 700;
+    margin: 0 0 .416rem 0;
+    user-select: none;
+}
+
+.field {
+    height: 2.5rem;
+    @include font-size(18);
+    text-indent: .83rem;
+    color: $color-gray;
+    background-color: white;
+    border: .10416rem solid $primary-border;
+    border-radius: .78125rem;
+    transition: box-shadow .4s;
+    font-family: inherit;
+    &::placeholder {color: inherit;}
+    &:focus {box-shadow: $box-shadow-def;}
+    margin: 0 0 1.4583rem 0;
+}
+
+.field-input {@extend .field;}
+
+.field-textarea {
+    @extend .field;
+    height: 6.5625rem;
+    padding: .4rem 0 0 0;
+    line-height: 160%;
+}
+
+.field-select {
+    @extend .field;
+    cursor: pointer;
+    & option {border: none;}
+}
+
+.field-select.fixed {
+    @extend .field-select;
+    width: 12.7083rem;
+}
+
+.field-date {
+    @extend .field;
+    text-indent: .4rem;
+    &::-webkit-calendar-picker-indicator {
+        @include bg-image('~@/assets/icon/calendar.svg', contain, center);
+        @include position(relative, -.4rem);
+        outline: 0;
+        cursor: pointer;
+    }
+}
+
+.field-date.fixed {
+    @extend .field-select;
+    width: 13.802083rem;
+    text-indent: .4rem;
+}
+
+.field-wrapper {
+    @include flex(initial, initial, column);
+}
+
+.form-title {
+    @include font-size(28);
+    font-weight: 700;
+}
+
+.form-wrapper {
+    @include flex(space-between, center);
+    margin: 0 0 1.5rem 0;
+}
+
+.form-space-wrapper {@include flex(space-between, center);}
+
+.form-control {@include flex(initial, center);}
+
+.btn-exit {
+    @include font-size(18);
+    color: $color-gray;
+    margin: 0 0 0 1.6rem;
+    cursor: pointer;
+    transition: .3s all;
+    &:hover {color: $color-red;}
+}
+
+.btn-login {
+    @extend .btn-exit;
+    &:hover {color: $color-sky;}
+}
+
+.btn-form-action {
+    cursor: pointer;
+    user-select: none;
+    @include font-size(18);
+}
+
+.btn-form-action-enable {
+    @extend .btn-form-action;
+    color: $color-sky;
+}
+
+.btn-form-action-disable {
+    @extend .btn-form-action;
+    color: $color-gray;
+}
+
+.path-hover {
+    path {transition: .3s all ease};
+    &:hover path {fill: $color-sky;}
+}

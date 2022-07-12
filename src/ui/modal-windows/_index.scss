@@ -1,0 +1,90 @@
+$modalFieldDefaultHeight: 2.083rem;
+$modalFieldTextareaHeight: 5rem;
+$modalFieldDefaultBorder: 2px solid #F5F5F5;
+
+$modalBtnDefaultHeight: 2.083rem;
+
+.modal-mb-default {margin-bottom: 1rem;}
+.modal-mt-default {margin-top: 1rem;}
+.modal-ml-default {margin-left: 1rem;}
+.modal-mr-default {margin-right: 1rem;}
+
+//***Main title in Modal Window
+.modal-form-title {
+    @extend .form-title;
+    @include font-size(24);
+    user-select: none;
+}
+
+//***Label in Modal Window
+.modal-form-label {
+    @extend .field-label;
+    @include font-size(18);
+}
+
+//***Input
+.modal-form-input {
+    @extend .field-input;
+    height: $modalFieldDefaultHeight;
+}
+
+//***Textarea
+.modal-form-textarea {
+    @extend .field-textarea;
+    height: $modalFieldTextareaHeight;
+    background-color: #F5F5F5;
+    text-indent: 0;
+    padding:.83rem;
+}
+
+//***Select
+.modal-form-select {
+    @extend .field-select;
+    height: $modalFieldDefaultHeight;
+}
+
+//***Date
+.modal-form-date {
+    @extend .field-date;
+    height: $modalFieldDefaultHeight;
+}
+
+//***Input Types extended properties
+.modal-form-default-property {
+    &:focus {box-shadow: none;}
+    border: $modalFieldDefaultBorder;
+    color: $primary-text;
+}
+
+.modal-form-input,
+.modal-form-textarea,
+.modal-form-select,
+.modal-form-date {@extend .modal-form-default-property}
+
+.modal-form-wrapper-items-2 {
+    @extend .form-wrapper;
+    > * {width: 48%}
+    margin: 0;
+    @media only screen and (max-width: 480px) {
+        flex-direction: column;
+        > div {width: 100%;}
+    }
+}
+
+.modal-form-row {
+    @include flex(space-between, center);
+    margin: 0 0 1.4583rem 0;
+    input {margin: 0;}
+}
+
+.modal-form-grow {flex-grow: .95;}
+
+.modal-btn {
+    height: $modalBtnDefaultHeight;
+}
+
+.modal-btn-sky {@extend .btn-sky;}
+.modal-btn-red {@extend .btn-red;}
+
+.modal-btn-sky,
+.modal-btn-red {@extend .modal-btn;}

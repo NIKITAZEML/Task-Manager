@@ -1,0 +1,12 @@
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - srv2363
+  script:
+    - rsync -r ./ /home/uizo/shady/task_manager
+    - npm --prefix /home/uizo/shady/task_manager i
+    - npm --prefix /home/uizo/shady/task_manager run build
